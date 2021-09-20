@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  overflow: hidden;
+  margin: 0;
+  background: azure;
+  min-height: 100vh; /* 100 проц видимой части высота */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/*.///////////////////////////////////////////////////////*/
+
+.site-header {
+  background: azure;
+  color: black;
+  display: flex;
+
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 10px;
+  font-size: large;
+}
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.site-nav a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #cdd0d0;
+  padding: 20px;
+  display: inline-block;
+}
+.site-nav a:hover {
+  font-weight: bold;
+  color: #62debe;
+  background: darken(#62debe, 40%);
+}
+
+.sign-out-link {
+  color: #62debe;
+  font-size: 0.8rem;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+/*.///////////////////////////////////////////////////////*/
+.container {
+  width: 100%;
+  display: flex;
+  padding: 0 20px; /* отступы по бокам */
+}
+
+.slide {
+  height: 80vh;
+  border-radius: 20px; /* концы с заакруглением */
+  margin: 10px; /* отсупы между секциями */
+  cursor: pointer; /* меняет курсор */
+  color: ghostwhite;
+  flex: 1; /* каждая секция растянется пропорционально */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+
+.slide h3 {
+  position: absolute;
+  font-size: 24px;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0; /* непрозрачность элемента */
+  font-weight: bold;
+}
+.slide.active {
+  flex: 10;
+}
+
+.slide.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s; /* задали анимацию */
+}
